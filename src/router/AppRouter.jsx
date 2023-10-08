@@ -11,6 +11,7 @@ import Home from "../Pages/Home/Home";
 import BlogList from "../Pages/Blog/BlogList/BlogList";
 import BlogDetail from "../Pages/Blog/BlogDetail/BlogDetail";
 import Test from "../Pages/Test/Test";
+import Games from "../Pages/Games/Games";
 
 
 const AppRouter = () => {
@@ -23,6 +24,7 @@ const AppRouter = () => {
                 <Route path="/blog" element={<BlogList/>} />
                 <Route path="/blog/:id" element={<BlogDetail/>} />
                 <Route path="/test" element={<Test/>} />
+                <Route path="/games" element={<Games/>} />
             </Routes>
         </BrowserRouter>
     </div>

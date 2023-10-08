@@ -23,11 +23,11 @@ function BlogDetail() {
         </Button>
         <Card>
           <CardContent>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h3" gutterBottom>
               {blog.title}
             </Typography>
-            <Typography variant="body1">
-              {blog.description}
+            <Typography variant="h5">
+              {blog.content}
             </Typography>
           </CardContent>
         </Card>

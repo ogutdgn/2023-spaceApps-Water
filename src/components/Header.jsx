@@ -25,7 +25,11 @@ const navItems = [
     {
         name: "TEST",
         path: "/test"
-    }
+    },
+    {
+      name: "GAMES",
+      path: "/games"
+    },
 ];
 
 function Header() {
