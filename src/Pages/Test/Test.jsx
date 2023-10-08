@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Typography, Card, CardContent, Grid, Box } from '@mui/material';
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout';
 
 function QuizComponent() {
@@ -99,22 +100,54 @@ function QuizComponent() {
                                 </Card>
                             ) : (
                                 <Box mt={4} p={3} boxShadow={3} style={{ borderRadius: '10px', backgroundColor: '#f5f5f5' }}>
-                                    <Typography variant="h4" align="center" style={{ fontWeight: 'bold', marginBottom: '20px' }}>Sonuçlar</Typography>
-                                    <hr style={{ marginBottom: '20px' }} />
-                                    <Grid container spacing={3} justify="center">
-                                        <Grid item xs={12} md={4}>
-                                            <Typography variant="h6" align="center">Doğru Cevaplar: {correctCount}</Typography>
+                                    {completed && (
+                                    <Box mt={4} p={3} boxShadow={3} style={{ borderRadius: '10px', backgroundColor: '#f5f5f5' }}>
+                                        <Typography variant="h4" align="center" style={{ fontWeight: 'bold', marginBottom: '20px' }}>Sonuçlar</Typography>
+                                        <hr style={{ marginBottom: '20px' }} />
+                                        <Grid container spacing={3} justify="center">
+                                            <Grid item xs={12} md={4}>
+                                                <Typography variant="h6" align="center">Doğru Cevaplar: {correctCount}</Typography>
+                                            </Grid>
+                                            <Grid item xs={12} md={4}>
+                                                <Typography variant="h6" align="center">Yanlış Cevaplar: {incorrectCount}</Typography>
+                                            </Grid>
+                                            <Grid item xs={12} md={4}>
+                                                <Typography variant="h6" align="center">Boş Cevaplar: {blankCount}</Typography>
+                                            </Grid>
+                                            <Grid item xs={12}>
+                                                <Typography variant="h5" align="center">Puanınız: {score}</Typography>
+                                            </Grid>
                                         </Grid>
-                                        <Grid item xs={12} md={4}>
-                                            <Typography variant="h6" align="center">Yanlış Cevaplar: {incorrectCount}</Typography>
-                                        </Grid>
-                                        <Grid item xs={12} md={4}>
-                                            <Typography variant="h6" align="center">Boş Cevaplar: {blankCount}</Typography>
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <Typography variant="h5" align="center">Puanınız: {score}</Typography>
-                                        </Grid>
-                                    </Grid>
+                                    <Grid item xs={12}>
+                <hr style={{ marginTop: '20px', marginBottom: '10px' }} />
+            {score < 50 && (
+                <>
+                    <Typography variant="h6" align="center" style={{ marginBottom: '10px' }}>Lütfen bilinçlenmek için bloglarımızı okuyunuz!</Typography>
+                    <Button component={Link} to="/blog" variant="contained" color="primary" style={{ margin: '0 auto', display: 'block', maxWidth: 'fit-content' }}>
+                        Blog Sayfasına Git
+                    </Button>
+                </>
+            )}
+            {score >= 50 && score < 80 && (
+                <>
+                    <Typography variant="h6" align="center" style={{ marginBottom: '10px' }}>Bilgilerin yeterli ama neden daha da çok şey öğrenmiyorsun?</Typography>
+                    <Button component={Link} to="/blog" variant="contained" color="primary" style={{ margin: '0 auto', display: 'block', maxWidth: 'fit-content' }}>
+                        Blog Sayfasına Git
+                    </Button>
+                </>
+            )}
+            {score >= 80 && (
+                <>
+                    <Typography variant="h6" align="center" style={{ marginBottom: '10px' }}>Tebrikler! Bilgileriniz mükemmel. Zevk amaçlı bloglarımızı okumak ister misiniz? :D</Typography>
+                    <Button component={Link} to="/blog" variant="contained" color="primary" style={{ margin: '0 auto', display: 'block', maxWidth: 'fit-content' }}>
+                        Blog Sayfasına Git
+                    </Button>
+                </>
+            )}
+        </Grid>
+    </Box>
+)}
+
                                 </Box>
                             )}
                         </>
