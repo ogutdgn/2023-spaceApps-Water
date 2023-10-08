@@ -1,0 +1,12 @@
+nav{
+    display: flex;
+    justify-content: center;
+}
+nav li{
+    list-style: none;
+    margin-right: 50px;
+    color: blueviolet;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: blueviolet;
+}
