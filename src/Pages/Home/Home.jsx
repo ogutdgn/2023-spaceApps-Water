@@ -9,7 +9,7 @@ const Home = () => {
         <div>
             <Layout>
                 <h3>
-                    Su kansfajknsfaskjf döngüsünde var olanı ancak koruyabiliriz, yeni su üretemeyiz. Peki ya koruyacak olan kim?
+                    Su döngüsünde var olanı ancak koruyabiliriz, yeni su üretemeyiz. Peki ya koruyacak olan kim?
                 </h3>
                 {/* Videoyu buraya ekleyin */}
                 <video width="100%" height="auto" controls>
