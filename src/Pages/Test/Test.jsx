@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Typography, Card, CardContent, Grid, Box } from '@mui/material';
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Layout from '../../components/Layout/Layout';
-import { Link } from 'react-router-dom';
 
 function QuizComponent() {
     const [testStarted, setTestStarted] = useState(false);
@@ -13,16 +12,7 @@ function QuizComponent() {
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
     const [blankCount, setBlankCount] = useState(0);
-    const [isChecked, setIsChecked] = useState(false);
 
-    const handleCheck = () => {
-        const correct = questions[currentQuestion].correctAnswer;
-        if (selections[currentQuestion] === correct) {
-            setIsChecked(true);
-        } else {
-            setIsChecked(false);
-        }
-    };
 
     const calculateScore = () => {
         let correct = 0;
@@ -77,7 +67,6 @@ function QuizComponent() {
                                                 disabled={completed}
                                             >
                                                 {questions[currentQuestion].options.map((option, optionIndex) => {
-                                                    const labels = ["A", "B", "C", "D"];
                                                     return (
                                                         <FormControlLabel 
                                                             key={optionIndex}
